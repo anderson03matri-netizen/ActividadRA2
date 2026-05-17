@@ -312,11 +312,11 @@ body {
     }
     
     .data-table-container {
-        padding: 10px;
+        padding: 9px;
     }
     
     .data-table th, .data-table td {
-        padding: 8px 10px;
+        padding: 8px 9px;
         font-size: 0.8rem; /* Evita que la tabla rompa el layout */
     }
 }
