@@ -204,6 +204,10 @@ body {
 @media (max-width: 768px) {
     .dashboard-container {
         grid-template-columns: 1fr; /* Columna única */
+        
+        /* SOLUCIÓN AL CORTE DE TEXTO: Redefinimos las 4 filas dinámicamente */
+        grid-template-rows: auto auto 1fr auto; 
+        
         grid-template-areas: 
             "header"
             "sidebar"
@@ -213,16 +217,106 @@ body {
 
     .sidebar {
         flex-direction: row;
+        flex-wrap: wrap; /* Permite que el menú se acomode si falta espacio */
         justify-content: space-between;
         align-items: center;
-        padding: 15px;
+        padding: 15px 20px;
+        gap: 15px;
+    }
+
+    /* Reducimos el diseño del logo en tablet para ganar espacio horizontal */
+    .sidebar .logo h2 {
+        font-size: 1.2rem;
+        border-bottom: none;
+        padding-bottom: 0;
     }
 
     .nav-links {
         flex-direction: row;
+        flex-wrap: wrap; /* Evita que los botones se salgan de la pantalla */
+        gap: 8px;
+    }
+
+    .nav-links a {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    /* Corrección del efecto hover: en horizontal no debe desplazarse a la izquierda */
+    .nav-links a:hover, .nav-links a.active, .nav-links a:focus {
+        padding-left: 12px; 
+    }
+
+    .header {
+        padding: 10px 20px;
+        height: auto;
+        min-height: 70px;
+        flex-wrap: wrap; /* Evita el solapamiento de buscador y perfil */
+        gap: 10px;
     }
 
     .search-bar input {
-        width: 150px; /* Reduce el tamaño en móviles */
+        width: 100%;
+        max-width: 220px; /* Ajuste fluido para el input */
+    }
+
+    .summary-cards {
+        flex-direction: column; /* Las tarjetas se apilan verticalmente */
+        gap: 15px;
+    }
+}
+
+/* ==========================================================================
+   2. MEDIA QUERY ESPECÍFICA PARA TELÉFONOS MÓVILES (max-width: 480px)
+   Optimización estricta para iPhone 14 Pro Max, Samsung A51, etc.
+   ========================================================================== */
+@media (max-width: 480px) {
+    .header {
+        flex-direction: column; /* Coloca el buscador arriba y el perfil abajo */
+        align-items: center;
+        gap: 12px;
+        padding: 15px;
+    }
+
+    .search-bar {
+        width: 100%;
+    }
+
+    .search-bar input {
+        width: 100%;
+        max-width: none; /* Ocupa todo el ancho disponible del teléfono */
+    }
+
+    .user-profile span {
+        display: none; /* Oculta el texto "Administrador" para ahorrar espacio; queda solo el avatar */
+    }
+
+    .sidebar {
+        flex-direction: column; /* En teléfonos muy angostos es más limpio apilar el menú */
+        gap: 12px;
+        text-align: center;
+    }
+
+    .nav-links {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .nav-links a {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
+
+    .main-content {
+        padding: 15px; /* Reduce los márgenes laterales excesivos en pantallas pequeñas */
+    }
+    
+    .data-table-container {
+        padding: 10px;
+    }
+    
+    .data-table th, .data-table td {
+        padding: 8px 10px;
+        font-size: 0.8rem; /* Evita que la tabla rompa el layout */
     }
 }
