@@ -308,15 +308,15 @@ body {
     }
 
     .main-content {
-        padding: 15px; /* Reduce los márgenes laterales excesivos en pantallas pequeñas */
+        padding: 14px; /* Reduce los márgenes laterales excesivos en pantallas pequeñas */
     }
     
     .data-table-container {
-        padding: 9px;
+        padding: 10px;
     }
     
     .data-table th, .data-table td {
-        padding: 8px 9px;
+        padding: 7px 10px;
         font-size: 0.8rem; /* Evita que la tabla rompa el layout */
     }
 }
