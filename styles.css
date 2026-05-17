@@ -308,7 +308,7 @@ body {
     }
 
     .main-content {
-        padding: 14px; /* Reduce los márgenes laterales excesivos en pantallas pequeñas */
+        padding: 15px; /* Reduce los márgenes laterales excesivos en pantallas pequeñas */
     }
     
     .data-table-container {
@@ -316,7 +316,13 @@ body {
     }
     
     .data-table th, .data-table td {
-        padding: 7px 10px;
+        padding: 8px 10px;
         font-size: 0.8rem; /* Evita que la tabla rompa el layout */
+    }
+
+    /* SOLUCIÓN AL APILADO DE TEXTO */
+    .status {
+        white-space: nowrap; /* Fuerza a que "Bajo Stock" u "Óptimo" se mantengan en una sola línea */
+        display: inline-block;
     }
 }
