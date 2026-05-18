@@ -266,10 +266,7 @@ body {
     }
 }
 
-/* ==========================================================================
-   2. MEDIA QUERY ESPECÍFICA PARA TELÉFONOS MÓVILES (max-width: 480px)
-   Optimización estricta para iPhone 14 Pro Max, Samsung A51, etc.
-   ========================================================================== */
+/* 2. MEDIA QUERY ESPECÍFICA PARA TELÉFONOS MÓVILES (max-width: 480px) */
 @media (max-width: 480px) {
     .header {
         flex-direction: column; /* Coloca el buscador arriba y el perfil abajo */
